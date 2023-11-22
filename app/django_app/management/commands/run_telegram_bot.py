@@ -3,7 +3,7 @@ import telebot
 from django_app.models import Task
 
 
-bot = telebot.TeleBot("6557769679:AAGKh8WTMP57DX6QyW2yaREb4pL1sz8Lv2s") # Вставьте сюда свой токен
+bot = telebot.TeleBot("6557769679:AAGKh8WTMP57DX6QyW2yaREb4pL1sz8Lv2s") 
 
 
 @bot.message_handler(commands=['start'])
@@ -28,7 +28,6 @@ def help_command(message):
 
 @bot.message_handler(commands=['add'])
 def add_task(message):
-    # Extract the task details from the command message
     command_parts = message.text.split(' ', 4)
     
     if len(command_parts) < 5:
@@ -39,7 +38,6 @@ def add_task(message):
     task_description = command_parts[2]
     task_status = command_parts[3]
 
-    # Create a new task and save it to the database
     new_task = Task(title=task_title, description=task_description, status=task_status)
     new_task.save()
 
