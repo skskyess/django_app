@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .models import Task  # Replace 'yourapp' with the actual name of your Django app
+from .models import Task 
 
 class TaskModelTest(TestCase):
     def setUp(self):
