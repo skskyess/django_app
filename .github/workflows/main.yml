@@ -3,7 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
@@ -25,7 +25,7 @@ jobs:
         port: 22
         script: |
 
-          cd /root/myenv/django_app/app
+          cd ./myenv/django_app/app
           source ./myenv/bin/activate
           git pull
           python manage.py migrate
