@@ -25,7 +25,7 @@ jobs:
         port: 22
         script: |
 
-          cd /app/django_app
+          cd /app
           source ./venv/bin/activate
           git pull
           python manage.py migrate
